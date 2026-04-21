@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0A1628;
+  --color-brand-yellow: #F5A623;
+  --color-brand-dark: #050B14;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-brand-navy bg-white selection:bg-brand-yellow selection:text-brand-navy;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-black tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-yellow text-brand-navy font-black py-4 px-8 rounded-md shadow-2xl shadow-brand-yellow/20 hover:brightness-110 transition-all text-center inline-block uppercase tracking-tight;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-brand-navy text-brand-navy font-black py-4 px-8 rounded-md hover:bg-brand-navy hover:text-white transition-all text-center inline-block uppercase tracking-tight;
+  }
+  
+  .gradient-overlay {
+    background: linear-gradient(90deg, rgba(10, 22, 40, 0.95) 0%, rgba(10, 22, 40, 0.7) 50%, rgba(10, 22, 40, 0.4) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl;
+  }
+}
