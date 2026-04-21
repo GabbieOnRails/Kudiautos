@@ -4,7 +4,9 @@
  */
 
 import { useState, useEffect, FormEvent } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import TireServices from './TireServices';
 import { 
   Phone, 
   Wrench, 
@@ -23,8 +25,10 @@ import {
   CreditCard
 } from 'lucide-react';
 
-const PHONE_NUMBER = "+1 (404) 587-8596";
-const TEL_LINK = "tel:+14045878596";
+const PHONE_NUMBER = "+1 (404) 484-5270";
+const TEL_LINK = "tel:+14044845270";
+const SECONDARY_PHONE = "+1 (404) 587-8595";
+const SECONDARY_TEL_LINK = "tel:+14045878595";
 
 // --- Components ---
 
@@ -51,6 +55,10 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-8 text-white font-medium text-sm">
           <a href="#services" className="hover:text-brand-yellow transition-colors font-bold tracking-widest text-xs uppercase">SERVICES</a>
+          <Link to="/tire-services" className="text-brand-yellow hover:text-white transition-colors font-black tracking-widest text-xs uppercase flex items-center gap-1 bg-white/5 py-1 px-3 rounded-lg border border-brand-yellow/30">
+            <Disc className="w-3 h-3 animate-spin-slow" />
+            TIRE SERVICES
+          </Link>
           <a href="#how-it-works" className="hover:text-brand-yellow transition-colors font-bold tracking-widest text-xs uppercase">HOW IT WORKS</a>
           <a href="#reviews" className="hover:text-brand-yellow transition-colors font-bold tracking-widest text-xs uppercase">REVIEWS</a>
           <div className="flex items-center gap-6 border-l border-white/10 pl-8 ml-4">
@@ -645,7 +653,7 @@ const FinalTrustBar = () => {
 
 // --- Main Page ---
 
-export default function App() {
+const HomePage = () => {
   return (
     <div className="antialiased selection:bg-brand-yellow selection:text-brand-navy">
       <Navbar />
@@ -662,5 +670,18 @@ export default function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/tire-services" element={<TireServices />} />
+        {/* Fallback to home */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
