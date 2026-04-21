@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Auto Repair & Tyre Service | Kudi Autos Marietta, GA</title>
-    <meta name="description" content="Skilled mobile mechanics in Marietta, GA. We offer brake repair, tyre changes, oil changes, and diagnostics at your home or office. Call now for same-day service!" />
-    <meta property="og:title" content="Kudi Autos & Mobile Tyres | We Come to You" />
-    <meta property="og:description" content="Trusted mobile mechanic serving Marietta, Smyrna, and Kennesaw. Expert repairs delivered to your driveway." />
+    <title>Kudi Autos | #1 Mobile Mechanic & Tyre Service Marietta, GA</title>
+    <script>
+      // Fix for 'Uncaught TypeError: Cannot set property fetch of #<Window> which has only a getter'
+      try {
+        const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch') || 
+                           Object.getOwnPropertyDescriptor(Object.getPrototypeOf(window), 'fetch');
+        if (descriptor && descriptor.get && !descriptor.set && descriptor.configurable) {
+          const originalFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            value: originalFetch,
+            writable: true,
+            configurable: true,
+            enumerable: true
+          });
+        }
+      } catch (e) {}
+    </script>
+    <meta name="description" content="#1 Rated Mobile Mechanic & Tyre Service in Marietta, GA. Expert on-site auto repair, brake service, and tyre replacement delivered to your driveway. Call now for same-day service!" />
+    <meta property="og:title" content="Kudi Autos | Mobile Mechanic Marietta, GA" />
+    <meta property="og:description" content="Expert repairs delivered straight to your driveway. We come to you—home, office, or roadside." />
     <meta property="og:type" content="website" />
   </head>
   <body>

@@ -193,12 +193,12 @@ const ServicesGrid = () => {
     },
     { 
       icon: Thermometer, 
-      name: "Cooling System Repair", 
+      name: "Coolant Leak Repair", 
       desc: "Radiator fixes, hose replacements, and coolant leak repairs." 
     },
     { 
       icon: Droplets, 
-      name: "Oil & Air Filter Service", 
+      name: "Oil Change & Air Filter Replacement", 
       desc: "Full synthetic oil changes and air filter replacements." 
     },
     { 
